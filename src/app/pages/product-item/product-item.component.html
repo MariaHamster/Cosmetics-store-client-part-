@@ -1,0 +1,45 @@
+<div *ngIf="product">
+  <div>
+    <div class="d-flex">
+      <img *ngIf="product?.img"
+           src="http://localhost:3000/public/{{product.img}}"
+           alt=""/>
+      <div class="d-flex flex-column">
+        <h4 class="textHeader product-name pb-3">{{product?.name}}</h4>
+
+          <div class="d-flex align-items-end">
+            <div class="price">Стоимость: </div>
+            <div class="px-2 product-price">{{product?.price}}</div>
+            <div class="price"> рублей</div>
+          </div>
+
+        <div class="d-flex mt-2">
+          <div>
+            <button class="btn btn-default" type="submit"
+                    (click)="addProductToBasket(product)">Купить</button>
+          </div>
+          <!-- <div class="product-icon">
+            <fa-icon class="icon"
+                     (click)="addProductInFavorites()"
+                     [icon]="favoritesIcon"
+                     size="2x"></fa-icon>
+          </div> -->
+        </div>
+
+      </div>
+    </div>
+
+  <div class="mt-4">
+    <p-tabView>
+      <p-tabPanel header="Описание">
+        <p>
+          {{product?.description}}
+        </p>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
+
+  </div>
+</div>
+
+<p-toast position="top-right"></p-toast>

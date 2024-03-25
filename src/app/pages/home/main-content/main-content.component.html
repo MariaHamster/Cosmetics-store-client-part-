@@ -1,0 +1,43 @@
+<div class="d-flex flex-column pe-2">
+
+  <div class="card flex flex-column gap-3 justify-content-center align-items-center">
+    <img src="assets/img/home/{{ first + 1}}.jpg"
+         class="img max-w-full"/>
+    <p-paginator [first]="first"
+                 [rows]="1"
+                 [totalRecords]="3"
+                 (onPageChange)="onPageChange($event)"
+                 [showFirstLastIcon]="false"
+                 [showPageLinks]="true"></p-paginator>
+  </div>
+
+  <div>
+    <h4 class="text-center text-header news-header">Новинки</h4>
+  </div>
+
+  <div class="new-products">
+
+  <p-carousel [value]="newProducts" [numVisible]="3" [numScroll]="1" [circular]="true" [responsiveOptions]="responsiveOptions">
+    <ng-template let-newProduct pTemplate="item">
+      <div class="new-product-wrap surface-border border-round m-2 text-center py-5 px-3">
+        <div class="new-product-img mb-3">
+            <img 
+            src="http://localhost:3000/public/{{ newProduct.img }}" 
+            [alt]="" 
+            class="w-6 shadow-2" />
+        </div>
+        <div>
+          <h4 class="product-title mb-1">{{ newProduct.name }}</h4>
+          <div class="mt-5">
+            <button class="btn btn-default" type="submit"
+                          (click)="goToProductInfoPage(newProduct)">Подробнее</button>
+          </div>
+        </div>
+      </div>
+    </ng-template>
+  </p-carousel>
+
+</div>
+
+</div>
+

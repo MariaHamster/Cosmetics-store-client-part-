@@ -1,0 +1,60 @@
+<div class="content d-flex flex-column justify-content-center">
+  <div>
+    <h4 class="text-center textHeader">Загрузка товара</h4>
+  </div>
+
+  <div class="mt-3 product-info" [formGroup]="productForm">
+    <div class="mt-3 d-flex">
+      <ng-container *ngTemplateOutlet="productFieldTitle; context:{titleValue:'Название продукта'}"></ng-container>
+      <textarea rows="1" cols="60"
+                pInputTextarea
+                [autoResize]="true"
+                placeholder="Название"
+                formControlName="name"></textarea>
+    </div>
+    <div class="mt-3 d-flex">
+      <ng-container *ngTemplateOutlet="productFieldTitle; context:{titleValue:'Описание продукта'}"></ng-container>
+      <textarea rows="3" cols="60"
+                pInputTextarea
+                [autoResize]="true"
+                placeholder="Описание"
+                formControlName="description"></textarea>
+    </div>
+    <div class="mt-3 d-flex">
+      <ng-container *ngTemplateOutlet="productFieldTitle; context:{titleValue:'Стоимость'}"></ng-container>
+      <p-inputNumber inputId="integeronly"
+                     inputId="minmax"
+                     mode="decimal"
+                     [min]="0" [max]="100000"
+                     placeholder="Стоимость"
+                     formControlName="price"></p-inputNumber>
+    </div>
+    <div class="mt-3 d-flex">
+      <ng-container *ngTemplateOutlet="productFieldTitle; context:{titleValue:'Тип продукта'}"></ng-container>
+      <p-dropdown [options]="productTypes"
+                  placeholder="Тип"
+                  formControlName="type"></p-dropdown>
+    </div>
+    <div class="mt-3 d-flex">
+      <ng-container *ngTemplateOutlet="productFieldTitle; context:{titleValue:'Изображение'}"></ng-container>
+      <input type="file"
+             class="ms-4"
+             (change)="selectFile($event)">
+    </div>
+
+    <div class="mt-5 d-flex justify-content-center">
+      <button class="btn btn-default" type="submit"
+              (click)="createProduct()"
+              [disabled]="!productForm.valid">Загрузить продукт</button>
+    </div>
+
+  </div>
+</div>
+
+
+
+<ng-template #productFieldTitle let-value="titleValue">
+  <span class="mx-3 text-field">{{value}}</span>
+</ng-template>
+
+<p-toast position="top-right"></p-toast>

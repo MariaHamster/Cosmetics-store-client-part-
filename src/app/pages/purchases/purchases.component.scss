@@ -1,0 +1,78 @@
+@import "src/assets/styles/main.scss";
+
+:host {
+  @media screen and (min-width: 768px) {
+    .products-img img {
+      padding-top: 38px;
+      padding-left: 10px;
+      padding-right: 10px;
+      height: 270px;
+    }
+    .product-counts {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+      font-size: 22px;
+    }
+  }
+  @media screen and (max-width: 960px) {
+    .products-img img {
+      padding-top: 32px;
+      height: 210px;
+    }
+    .product-counts {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+      font-size: 20px;
+    }
+    }
+  @media screen and (max-width: 767px) {
+    .products-img img {
+      padding-top: 32px;
+      height: 150px;
+    }
+    .product-counts {
+      padding-right: 0.3rem;
+      padding-left: 0.3rem;
+      font-size: 18px;
+    }
+  }
+    .purchases-item {
+      padding: 10px;
+      border: 1px solid $main-color;
+      border-radius: 5px;
+    }
+    .field-name {
+      width: 25%;
+    }
+    .products-wrap {
+      width: 75%;
+      overflow: hidden;
+      overflow-x: auto;
+    }
+    .products-img {
+      cursor: pointer;
+    }
+    .products-img-price-count {
+      position: relative;
+      border: 1px solid #dad5d5;
+      border-radius: 5px;
+    }
+    .product-price-count {
+      border-top: 1px solid #dad5d5;
+    }
+    .product-counts {
+      position: absolute;
+      background-color: #f5f5f5;
+      border-radius: 5px;
+      font-weight: 600;
+      top: 0;
+      right: 0;
+    }
+    .button {
+      bottom: 0;
+      right: 0;
+    }
+    .button button {
+      width: 200px;
+    }
+  }

@@ -1,0 +1,20 @@
+:host {
+  @media screen and (max-width: 767px) {
+  }
+  @media screen and (min-width: 768px) {
+
+  }
+  ::ng-deep {
+    div.p-dropdown {
+      margin-left: 16px;
+      margin-right: 16px;
+      width: 85%;
+    }
+    .p-dropdown-label {
+      overflow: visible;
+    }
+    .p-inputtext {
+      margin-left: 15px;
+    }
+  }
+}

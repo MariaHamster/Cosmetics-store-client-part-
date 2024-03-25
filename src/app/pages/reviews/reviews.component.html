@@ -1,0 +1,38 @@
+<div>
+  <div>
+    <h4 class="text-center textHeader">Отзывы</h4>
+  </div>
+
+  <div>
+    <div *ngIf="reviews"
+         #reviewWrap
+         class="d-flex flex-column justify-content-around">
+
+      <div class="review-item mt-3"
+           *ngFor="let item of reviews; let i = index">
+
+        <div class="d-flex flex-column">
+          <div class="d-flex mx-3 mt-1 mb-1">
+            <div class="theme fw-bolder">Тема:</div>
+            <div class="user-theme">{{item.theme}}</div>
+          </div>
+          <div class="d-flex mx-3 mt-1 mb-1">
+            <div class="name fw-bolder">Имя пользователя:</div>
+            <div class="user-name">{{item.name}}</div>
+          </div>
+          <div class="d-flex mx-3 mt-1 mb-1">
+            <div class="email fw-bolder">Почта пользователя:</div>
+            <div class="user-email">{{item.mail}}</div>
+          </div>
+          <div class="d-flex mx-3 mt-1 mb-1">
+            <div class="feedback fw-bolder">Отзыв:</div>
+            <div class="user-feedback">{{item.text}}</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>

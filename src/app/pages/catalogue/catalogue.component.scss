@@ -1,0 +1,98 @@
+@import "src/assets/styles/main.scss";
+
+:host {
+  @media screen and (max-width: 767px) {
+    .main-container {
+      flex-direction: column;
+    }
+    .aside {
+      background-color: #ffffff;
+    }
+    .product-item {
+      flex: 0 0 auto;
+      width: 46%;
+    }
+    .product-info {
+      padding: 8px 12px;
+    }
+  }
+  @media screen and (max-width: 960px) {
+    // .product-item {
+    //   flex: 0 0 auto;
+    //   width: 46%;
+    // }
+    .product-info {
+      overflow: hidden;
+      padding: 4px 6px !important;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .product-item {
+      flex: 0 0 auto;
+      width: 31%;
+    }
+    .product-info {
+      padding: 16px 24px;
+    }
+  }
+  .aside {
+    display: block;
+    height: 40%;
+    min-width: 200px;
+    padding-bottom: 1rem;
+    position: sticky;
+    top: 0;
+  }
+  .product-items {
+    margin-left: 0.5rem;
+  }
+  .product-item {
+    margin: 0 0.25rem 0.5rem 0.25rem;
+    border: 1px solid #dad5d5;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    & img {
+      display: block;
+      max-height: 190px;
+      width: 100%;
+      max-width: 190px;
+      cursor: pointer;
+    }
+  }
+    .product-img {
+      display: block;
+      padding: 12px;
+      max-height: 243px;
+    }
+    .product-info {
+      height: 170px;
+      border-top: 1px solid #dad5d5;
+    }
+    .product-title {
+      height: 76px;
+      cursor: pointer;
+      overflow: hidden;
+      // Разбивает длинные названия
+      word-break: break-word;
+    }
+    .product-icon {
+      height: 33px;
+      width: 100%;
+    }
+    .adminIcon {
+      display: none;
+    }
+    .icon {
+      color: $inactive-color;
+    }
+    .icon:hover {
+      cursor: pointer;
+      color: $active-color;
+    }
+    // временный класс для скрытия загрузки при скролле
+    .hidden {
+      display: none;
+    }
+}
+

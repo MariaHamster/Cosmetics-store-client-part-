@@ -1,0 +1,82 @@
+@import "src/assets/styles/_color.scss";
+
+:host {
+  background-color: $background-inactive-color;
+  display: block;
+  width: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .left-img, .right-img {
+    display: none;
+  }
+  .info {
+    width: 100%;
+  }
+  //.img {
+  //  width: 50%;
+  //}
+}
+
+@media screen and (min-width: 768px) {
+  .info {
+    width: 31%;
+  }
+  .img {
+    height: 100%;
+    width: 31%;
+  }
+}
+
+.footer {
+  height: 140px;
+  width: 100%;
+}
+.info {
+  padding-bottom: 1rem;
+  min-width: 150px;
+  color: $main-color;
+  font-weight: 600;
+}
+.info-link {
+  text-decoration: none;
+  color: $main-color;
+}
+.icons {
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 10px;
+}
+.vk-icon a {
+  color: $main-color;
+}
+.tiktok-icon {
+  height: 42px;
+  width: 42px;
+  background-color: $main-color;
+  border-radius: 10px;
+}
+.tiktok-icon a {
+  color: $background-inactive-color;
+}
+.tiktok-icon fa-icon {
+  display: inline-block;
+  transform: translate(7px, 5px);
+}
+.left-img {
+  max-height: 70px;
+}
+.right-img {
+  max-height: 140px;
+}
+.img img {
+  //???
+  height: 100%;
+  width: 90%;
+}
+
+

@@ -1,0 +1,17 @@
+:host {
+  .content {
+    display: block;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .product-info {
+    max-width: 780px;
+  }
+  ::ng-deep {
+    .text-field {
+      width: 150px;
+    }
+  }
+}
+

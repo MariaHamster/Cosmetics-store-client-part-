@@ -1,0 +1,75 @@
+<div class="d-flex flex-column authorization-input-wrap">
+  <div class="d-flex flex-column align-items-center animated">
+  <div class="input">
+      <span class="mx-3">{{loginText}}</span>
+      <input type="text" 
+           pInputText 
+           [(ngModel)]="login"
+           [pattern]="loginPattern"
+           #ulogin="ngModel"/>
+  </div>
+  <div *ngIf="ulogin.errors"
+          class="error-login-psw pt-1">
+          <div class="d-flex">
+            <div class="pe-2">-</div>
+            <div>Логин должен состоять минимум из 2 символов.</div>
+          </div>
+          <div class="d-flex">
+            <div class="pe-2" style="height: 31.2px;">-</div>
+            <div>Логин может содержать только русские и английские буквы, цифры, 
+              а также знак тире и знак нижнего подчёркивания.</div>
+          </div>
+          <div class="d-flex">
+            <div class="pe-2">-</div>
+            <div>Логин не должен начинаться или заканчиваться знаками.</div>
+          </div>
+    </div>
+</div>
+<div class="d-flex flex-column align-items-center">
+  <div class="input">
+    <span class="mx-3">{{pswText}}</span>
+    <input type="password" 
+           [pattern]="pswPattern"
+           class="mt-3"
+           pInputText 
+           [(ngModel)]="psw"
+           #upsw="ngModel"
+           [ngClass]="{'input-error': psw!=pswRepeat}"/>
+  </div>
+  <div *ngIf="upsw.errors"
+          class="error-login-psw pt-1">
+          <!-- <div class="d-flex">
+            <div class="pe-2">-</div>
+            <div>Пароль должен состоять минимум из 4 символов.</div>
+          </div> -->
+          <div class="d-flex">
+            <div class="pe-2">-</div>
+            <div>Пароль не должен содержать пробелы.</div>
+          </div>
+  </div>
+  </div>
+  <div class="d-flex flex-column align-items-center">
+  <div class="input">
+    <span class="mx-3">{{pswRepeatText}}</span>
+      <input type="password"
+             class="mt-3"
+             pInputText
+             [(ngModel)]="pswRepeat"
+             [ngClass]="{'input-error': pswRepeat!=psw}"/>
+  </div>
+  <div *ngIf="pswRepeat!=psw"
+          class="error-login-psw pt-1">
+          <div class="d-flex">
+            <div class="pe-2">-</div>
+            <div>Пароли не совпадают.</div>
+          </div>
+  </div>
+  </div>
+
+  <div class="mt-5 d-flex justify-content-center">
+    <button [disabled]="!login || !psw || !pswRepeat || ulogin.errors || upsw.errors"
+            (click)="registration($event)"
+            type="submit"
+            class="btn btn-default">Зарегистрироваться</button>
+  </div>
+</div>

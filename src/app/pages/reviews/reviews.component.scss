@@ -1,0 +1,44 @@
+:host {
+  .review-item {
+    margin-right: 0.5rem;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+  }
+  .user-email {
+    overflow: hidden;
+    overflow: auto;
+  }
+  .user-name, .user-feedback {
+    max-height: 150px;
+    word-break: break-word;
+    overflow: hidden;
+    overflow: auto;
+  }
+  @media screen and (min-width: 768px) {
+    .theme, .name, .email, .feedback {
+      width: 25%;
+    }
+    .user-theme, .user-name, .user-email, .user-feedback {
+      width: 75%;
+    }
+  }
+  @media screen and (max-width: 960px) {
+    //планшет + телефон
+    .theme, .name, .email, .feedback {
+      width: 40%;
+    }
+    .user-theme, .user-name, .user-email, .user-feedback {
+      width: 60%;
+    }
+  }
+  // @media screen and (max-width: 767px) {
+  //   //телефон
+  //   .theme, .name, .email, .feedback {
+  //     width: 35%;
+  //   }
+  //   .user-theme, .user-name, .user-email, .user-feedback {
+  //     width: 65%;
+  //   }
+  // }
+}

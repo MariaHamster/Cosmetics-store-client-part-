@@ -1,0 +1,27 @@
+@import "src/assets/styles/_color.scss";
+
+:host ::ng-deep {
+  .p-tabview {
+    display: block;
+  }
+  .p-tabview-nav {
+    margin-bottom: 1.5rem;
+    justify-content: center;
+    height: 56px;
+  }
+  .p-tabview-nav-link {
+    padding: 0.75rem 1.25rem;
+    user-select: none;
+    color: $main-color;
+    font-weight: 700;
+  }
+  .p-tabview-nav-link:hover,
+  .p-tabview-nav-link:focus{
+    color: $active-color;
+  }
+  .p-tabview-nav-link:hover,
+  .p-tabview-nav-link:focus {
+    display: block;
+    border-bottom: 2px $active-color solid;
+  }
+}

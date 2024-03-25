@@ -1,0 +1,57 @@
+<div class="content d-flex flex-column justify-content-center">
+  <div>
+    <h4 class="text-center textHeader">Обратный отзыв</h4>
+  </div>
+
+  <div class="mt-3 feedback-info" [formGroup]="feedbackForm">
+    <div class="mt-3 d-flex">
+      <ng-container *ngTemplateOutlet="feedbackFieldTitle; context:{titleValue:'Выберите тему'}"></ng-container>
+      <div class="listbox-wrap">
+        <p-listbox [options]="themes"
+                    formControlName="theme"></p-listbox>
+                    <!-- [style]="{ width: '30rem' }" -->
+      </div>
+      
+    </div>
+    <div class="mt-3 d-flex">
+      <ng-container *ngTemplateOutlet="feedbackFieldTitle; context:{titleValue:'Ваше имя'}"></ng-container>
+      <input type="text"
+            minlength="1"
+             maxlength="60"
+             pInputText
+             placeholder="Имя"
+             formControlName="name">
+    </div>
+    <div class="mt-3 d-flex">
+      <ng-container *ngTemplateOutlet="feedbackFieldTitle; context:{titleValue:'Ваша почта'}"></ng-container>
+      <input type="email"
+             pInputText
+             placeholder="Почта"
+             formControlName="mail">
+    </div>
+    <div class="mt-3 d-flex">
+      <ng-container *ngTemplateOutlet="feedbackFieldTitle; context:{titleValue:'Введите текст обращения'}"></ng-container>
+      <textarea rows="3" cols="60"
+                pInputTextarea
+                [autoResize]="true"
+                placeholder="Текст обращения"
+                formControlName="text"></textarea>
+    </div>
+
+
+    <div class="mt-5 d-flex justify-content-center">
+      <button class="btn btn-default" type="submit"
+              (click)="createFeedback()"
+              [disabled]="!feedbackForm.valid">Отправить</button>
+    </div>
+
+  </div>
+</div>
+
+
+
+<ng-template #feedbackFieldTitle let-value="titleValue">
+  <span class="mx-3 text-field">{{value}}</span>
+</ng-template>
+
+<p-toast position="top-right"></p-toast>

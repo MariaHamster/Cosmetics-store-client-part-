@@ -1,0 +1,69 @@
+<div>
+  <div>
+    <h4 class="text-center text-header">Мои покупки</h4>
+  </div>
+
+  <div>
+    <div *ngIf="orderPurchases"
+         #purchasesWrap
+         class="d-flex flex-column justify-content-around me-2">
+
+      <div class="purchases-item mt-3"
+           *ngFor="let item of orderPurchases; let i = index">
+
+        <div class="d-flex flex-column">
+          <div class="d-flex mx-3 mt-1 mb-2">
+            <div class="fw-bolder w-25">Номер заказа:</div>
+            <div class="w-50">{{item.order.orderNumber}}</div>
+          </div>
+
+          <div class="purchases-wrap d-flex mx-3 mt-3 mb-1 pt-3">
+            <div class="field-name fw-bolder w-25">Товары:</div>
+            <div class="products-wrap d-flex">
+              <div *ngFor="let item2 of item.products; let j = index"
+                    class="products-img-price-count d-flex flex-column me-2 mb-3">
+                <div class="products-img my-2" (click)="goToProductInfoPage(item2)">
+                    <img src="http://localhost:3000/public/{{ item2.img }}" 
+                          [alt]="" 
+                          class="w-6 shadow-2" />
+                          <!-- (click)="goToProductInfoPage(item2)" -->
+                </div>
+                <div class="product-price-count d-flex flex-column justify-content-around mt-1">
+                  <div class="d-flex justify-content-center mt-1 mb-1">
+                    <div class="product-price pe-1">{{ item2.price }}</div>
+                    <div class="product-price">руб.</div>
+                  </div>
+                  <div class="product-counts d-flex justify-content-center pb-1">
+                    <div class="x-counts">x</div>
+                    <div class="custom-counts">{{ item2._customCounts }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="position-relative d-flex mx-3 mt-4 mb-3">
+            <div class="fw-bolder w-25">Итоговая цена:</div>
+            <div class="w-50">{{item.order.totalPriceValue}}</div>
+            <div class="position-absolute button">
+              <button class="btn btn-default" type="submit"
+                      (click)="addOrderToBasket(item)">Повторить заказ</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="button-wrap d-flex my-4">
+          <div class=""></div> -->
+          
+        <!-- </div> -->
+        
+      </div>
+      
+    </div>
+  </div>
+
+</div>
+
+<p-toast position="top-right"></p-toast>
+
+

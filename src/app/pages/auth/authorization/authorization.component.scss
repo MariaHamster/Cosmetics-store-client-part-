@@ -1,0 +1,34 @@
+@import "src/assets/styles/main.scss";
+
+@media screen and (max-width: 767px) {
+  .input {
+    justify-content: space-around;
+  }
+}
+@media screen and (min-width: 768px) {
+  .authorization-input-wrap span {
+    width: 120px;
+  }
+  .input {
+    justify-content: center;
+  }
+}
+.input {
+  display: flex;
+  align-items: baseline;
+}
+:host ::ng-deep {
+  .p-inputtext {
+    height: 40px;
+    padding: 0.5rem 0.5rem;
+    border: 1px solid #605e5c;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    appearance: none;
+    border-radius: 10px;
+    //border: 1px solid $main-color;
+    //border-radius: 10px;
+  }
+  .p-inputtext.ng-dirty.ng-invalid {
+    border-color: #a4252c;
+  }
+}

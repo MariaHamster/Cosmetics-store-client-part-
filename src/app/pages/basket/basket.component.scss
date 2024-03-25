@@ -1,0 +1,147 @@
+@import "src/assets/styles/main.scss";
+
+:host {
+  @media screen and (max-width: 767px) {
+    .content-container {
+      flex-direction: column-reverse;
+    }
+    .product-item {
+      flex-direction: column;
+    }
+    .order {
+      width: 100%;
+      padding-bottom: 1rem;
+      position: sticky;
+      top: 0;
+      background-color: #ffffff;
+    }
+    .product-img img {
+      width: 100%;
+      min-height: 90px;
+      min-width: 90px;
+    }
+    .product-name {
+      padding-right: 0.5rem;
+    }
+    .price-quantity-container {
+      padding-top: 0.5rem;
+    }
+    .btn-order {
+      margin-top: 1rem;
+      width: 100%;
+    }
+    .total-price {
+      width: 100%;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .text-header {
+      padding-bottom: 0.5rem;
+    }
+    .products {
+      width: 80%;
+    }
+    .basket-wrap {
+      width: 95%;
+    }
+    .img-name-container {
+      width: 60%;
+    }
+    .product-img {
+      width: 30%;
+    }
+    .price-quantity-container {
+      width: 40%;
+    }
+    .order {
+      padding-right: 1rem;
+      width: 20%;
+      height: 40%;
+      position: sticky;
+      top: 0;
+    }
+    .btn-order {
+      margin-top: 0.5rem;
+      width: 95%;
+    }
+    .total-price {
+      width: 95%;
+    }
+  }
+  .product-item {
+    position: relative;
+    border: 1px solid $main-color;
+    border-radius: 10px;
+  }
+  fa-icon {
+    position: absolute;
+    top: 0.2rem;
+    right: 0.3rem;
+    cursor: pointer;
+  }
+  .icon {
+    color: $inactive-color;
+  }
+  .icon:hover {
+    cursor: pointer;
+    color: $active-color;
+  }
+  .product-img {
+    cursor: pointer;
+  }
+  .product-img img {
+    width: 100%;
+    max-height: 180px;
+    max-width: 180px;
+    border-radius: 10px;
+  }
+  .product-name {
+    width: 70%;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .product-price {
+    font-size: 1.2rem;
+    //width: 14%;
+    //width: 28%;
+    max-width: 150px;
+  }
+  .product-quantity {
+    //width: 35%;
+    //width: 71%;
+    max-height: 40px;
+    width: 150px;
+    //max-width: 200px;
+  }
+  .total-price {
+    font-weight: 600;
+  }
+  .optional-info {
+    padding-top: 0.75rem;
+    font-size: 0.8rem;
+    color: $inactive-color;
+  }
+  ::ng-deep {
+    #minmax-buttons {
+      //margin-right: 1.2rem;
+      width: 40px;
+      border: none;
+      font-size: 1.5rem;
+    }
+    .p-inputtext:enabled:focus {
+      box-shadow: none;
+      border: none;
+    }
+    button {
+      color: $active-color;
+      border-color: $active-color;
+      border-radius: 10px !important;
+      background-color: #ffffff;
+    }
+    .p-button:enabled:hover,
+    .p-button:enabled:active {
+      border-color: $active-color;
+      background-color: $active-color;
+    }
+  }
+}

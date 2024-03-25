@@ -1,0 +1,35 @@
+<div>
+  <div class="menu">
+    <div class="logo">
+      <div class="large-logo">
+        <a [routerLink]="['home']">
+          <img src="/assets/img/logo--large.png">
+        </a>
+      </div>
+      <div class="small-logo">
+        <a [routerLink]="['home']">
+          <img src="/assets/img/logo--small-v3.png">
+        </a>
+      </div>
+    </div>
+
+    <div class="p-input-text">
+      <input #productSearch
+             [(ngModel)]="productSearchValue"
+             type="text"
+             [routerLink]="['catalogue']"
+             pInputText
+             placeholder="Поиск из каталога"
+             class="w-full">
+<!--      #productSearch [(ngModel)]="productSearchValue"-->
+    </div>
+
+    <div>
+      <p-menubar [model]="items"></p-menubar>
+    </div>
+<!--    <div *ngIf="auth">-->
+<!--      <p-menubar [model]="fullItems"></p-menubar>-->
+<!--    </div>-->
+  </div>
+</div>
+

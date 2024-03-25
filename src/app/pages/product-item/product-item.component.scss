@@ -1,0 +1,40 @@
+@import "src/assets/styles/main.scss";
+
+:host {
+  img {
+    height: 30%;
+    width: 30%;
+    min-height: 190px;
+    min-width: 190px;
+    max-height: 400px;
+    max-width: 400px;
+  }
+  .product-name {
+    border-bottom: 2px solid $main-color;
+  }
+  .price {
+    line-height: 36px;
+  }
+  .product-price {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  button {
+    height: 20%;
+    width: 20%;
+    min-width: 81px;
+    min-height: 38px;
+  }
+  .product-icon {
+    margin-left: 1.5rem;
+  }
+  ::ng-deep {
+    .icon {
+      color: $inactive-color;
+    }
+    .icon:hover {
+      cursor: pointer;
+      color: $active-color;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+:host {
+  .content {
+    display: block;
+    max-width: 780px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .feedback-info {
+    max-width: 780px;
+  }
+  .listbox-wrap {
+    max-width: 30rem;
+  }
+  ::ng-deep {
+    .text-field {
+      width: 150px;
+    }
+  }
+  .p-inputtext.ng-dirty.ng-invalid {
+    border-color: #cf2028;
+  }
+}

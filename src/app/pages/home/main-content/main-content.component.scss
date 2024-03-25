@@ -1,0 +1,93 @@
+@import "src/assets/styles/_color.scss";
+
+:host {
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  .img {
+    // display: block;
+    // position: absolute;
+    // padding-top: 25%;
+    width: 100%;
+  }
+
+  .news-header {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .new-product-wrap {
+    border: 1px solid #dad5d5;
+    border-radius: 1.5rem;
+  }
+
+  .new-product-img img {
+    height: 250px;
+    width: 250px;
+  }
+  .product-title {
+    height: 84px;
+    // width: 320px;
+    overflow: hidden;
+    word-break: break-word;
+  }
+
+  ::ng-deep {
+    .card {
+      position: relative;
+      border-color: #ffffff;
+    }
+    .p-paginator .p-paginator-pages .p-paginator-page {
+      background-color: $main-color;
+      color: $main-color;
+      height: 10px;
+      //width: 20px;
+      margin: 0.25rem;
+    }
+    .p-paginator .p-paginator-pages .p-paginator-page:not(.p-highlight):hover {
+      background-color: $main-color;
+      color: $main-color;
+    }
+    .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+      background-color: $active-color;
+      color: $active-color;
+    }
+    svg.p-icon.p-paginator-icon {
+      height: 30px;
+      width: 30px;
+    }
+    .p-paginator .p-paginator-first,
+    .p-paginator .p-paginator-prev,
+    .p-paginator .p-paginator-next,
+    .p-paginator .p-paginator-last {
+      display: none;
+    }
+
+    .p-carousel .p-carousel-indicators .p-carousel-indicator button {
+      background-color: $main-color;
+      width: 38px;
+      height: 10px;
+      border-radius: 2px;
+    }
+    .p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+      background-color: $active-color;
+      border-radius: 2px;
+    }
+  }
+
+}
+/*.ticket-item {*/
+/*  height: 300px;*/
+/*  border: 1px solid #dad5d5;*/
+/*  border-radius: 2px;*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  justify-content: space-between;*/
+/*& .ticket-title {*/
+/*    padding: 2px;*/
+/*  }*/
+/*& img {*/
+/*    height: 200px;*/
+/*  }*/
+/*}*/
